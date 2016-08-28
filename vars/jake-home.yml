@@ -1,0 +1,7 @@
+# => inherits: jake-linux <= #
+
+features:
+  - slackware
+  - taskwarrior:
+      context: 'home'
+

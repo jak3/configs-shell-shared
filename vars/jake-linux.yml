@@ -1,5 +1,15 @@
 # => inherits: generic <= #
 
+env_vars:
+  - XDG_CONFIG_HOME: "$HOME/.config"
+  - HISTCONTROL: "ignoredups"
+  - LESS: "--ignore-case --raw-control-chars"
+  - EDITOR: "vim"
+  - FIZZY_DIR: "$HOME/.fizzy"
+  - BASE16_SHELL: "$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
+  - STUFF: "$HOME/personal_stuff"
+  - W3MIMGDISPLAY_PATH: "/usr/lib/w3m/w3mimgdisplay"
+
 features:
   - base16_shell
   - chips
@@ -7,9 +17,6 @@ features:
   - git
   - personal_stuff
   - screen
-  - slackware
-  - taskwarrior:
-      context: 'home'
   - w3mimgdisplay
   - zathura
   - zsh
