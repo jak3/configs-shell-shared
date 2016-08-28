@@ -1,4 +1,7 @@
 #!/bin/bash
+<% define_locals do
+  variable :"env_vars", default: []
+end -%>
 
 <% if local? :env_vars %>
 <% local!(:env_vars).each do |name, value| %>
