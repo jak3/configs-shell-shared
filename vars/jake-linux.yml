@@ -3,14 +3,14 @@
 downloads_dir: '~/Downloads'
 
 env_vars:
-  XDG_CONFIG_HOME: "$HOME/.config"
-  HISTCONTROL: "ignoredups"
-  LESS: "--ignore-case --raw-control-chars"
+  BASE16_SHELL: "$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
   EDITOR: "vim"
   FIZZY_DIR: "$HOME/.fizzy"
-  BASE16_SHELL: "$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
+  HISTCONTROL: "ignoredups"
+  LESS: "--ignore-case --raw-control-chars"
   STUFF: "$HOME/personal_stuff"
   W3MIMGDISPLAY_PATH: "/usr/lib/w3m/w3mimgdisplay"
+  XDG_CONFIG_HOME: "$HOME/.config"
 
 features:
   - base16_shell

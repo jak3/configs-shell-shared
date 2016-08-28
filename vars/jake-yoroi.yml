@@ -1,8 +1,8 @@
 # => inherits: jake-linux <= #
 
 env_vars:
-  - IBM_API_KEY: "d42a2d98-d375-4552-a03d-f02667ca9a8e"
-  - IBM_API_PWD: "e67f3cdb-908a-46a2-b6bd-f56bfe4261cb"
+  IBM_API_KEY: "d42a2d98-d375-4552-a03d-f02667ca9a8e"
+  IBM_API_PWD: "e67f3cdb-908a-46a2-b6bd-f56bfe4261cb"
 
 features:
   - ibmxf
