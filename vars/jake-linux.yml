@@ -1,5 +1,7 @@
 # => inherits: generic <= #
 
+downloads_dir: '~/Downloads'
+
 env_vars:
   - XDG_CONFIG_HOME: "$HOME/.config"
   - HISTCONTROL: "ignoredups"
