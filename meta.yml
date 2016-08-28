@@ -1,0 +1,34 @@
+elems:
+
+  - src: elems/(aliases)$
+    dst: ~/.config/shell/<1>
+    only:
+      features:
+        - alias
+
+  - src: elems/(dircolors)$
+    dst: ~/.config/shell/<1>
+    only:
+      features:
+        - dircolors
+
+  - src: elems/(environment)$
+    dst: ~/.config/shell/<1>
+    only:
+      features:
+        - env
+
+  - src: elems/(functions)$
+    dst: ~/.config/shell/<1>
+    only:
+      features:
+        - functions
+
+  - src: elems/(temp.env)$
+    dst: ~/.config/shell/<1>
+    only:
+      features:
+        - temp_env
+
+
+# vim: set filetype=eruby.yaml :

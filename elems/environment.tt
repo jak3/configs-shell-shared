@@ -1,0 +1,38 @@
+#!/bin/bash
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export HISTCONTROL=ignoredups
+export LESS='--ignore-case --raw-control-chars'
+export EDITOR='vim'
+
+<% if has_feature? :base16_shell %>
+BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+<% end %>
+
+<% if has_feature? :personal_stuff %>
+export STUFF="$HOME/personal_stuff"
+<% end %>
+
+<% if has_feature? :ibmxf %>
+export IBM_API_KEY="d42a2d98-d375-4552-a03d-f02667ca9a8e"
+export IBM_API_PWD="e67f3cdb-908a-46a2-b6bd-f56bfe4261cb"
+<% end %>
+
+<% if has_feature? :w3mimgdisplay %>
+export W3MIMGDISPLAY_PATH=/usr/lib/w3m/w3mimgdisplay
+<% end %>
+
+<% if has_feature? :temp_env %>
+# fast directory handling
+source $HOME/.config/shell/temp.env
+<% end %>
+
+<% if has_feature? :dircolors %>
+#Export LS_COLORS
+eval `dircolors $HOME/.dircolors`
+<% end %>
+
+stty -ixon
+
+# EOF vim: set ts=2 sw=2 tw=80 :

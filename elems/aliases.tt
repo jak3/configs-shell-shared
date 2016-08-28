@@ -1,0 +1,147 @@
+# [Shell specific] --------------------------------------------------------- {{{
+<% if has_feature? :zsh %>
+# Globals ------------------------------------------------------------------ {{{
+alias -g G="| grep"
+alias -g L="| less"
+alias -g C="| xsel -bi"
+# }}}
+<% end %>
+
+<% if has_feature? :bash %>
+alias ....='cd ../../..'
+alias ...='cd ../../'
+alias ..='cd ..'
+alias cd='pushd'
+alias cdd='cd <%= get_var! :downloads_dir, type: :directory %>'
+alias cdb='cd ..'
+alias cdbb='cd ../../'
+alias cdbbb='cd ../../../'
+alias 1='cd -1'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
+alias 10='cd -10'
+<% end %>
+# }}}
+
+# [Generic] ---------------------------------------------------------------- {{{
+alias bc='bc -q'
+alias bye='shutdown -h now'
+alias ca='clear;history -c;dirs -c'
+alias c='clear'
+alias cd=cd_and_ls
+alias cp='cp -i'
+alias d='dir -v | head -10'
+alias e='exit'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias gdb='gdb -q'
+alias g='git'
+alias grep='grep --color=auto'
+alias h='history'
+alias info='info --vi-keys'
+alias j='jobs -l'
+alias las='ls -las'
+alias lc='ls -ltcr'        # sort by and show change time, most recent last
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
+alias lk='ls -lSr'         # sort by size, biggest last
+alias ll="ls -l --group-directories-first"
+alias lm='ls -al |more'    # pipe through 'more'
+alias lr='ls -lR'          # recursive ls
+alias lsd='ls -hFt <%= get_var! :downloads_dir, type: :directory %>'
+alias ls='ls -hF --color=auto'  # add colors for filetype recognition
+alias lt='ls -ltr'         # sort by date, most recent last
+alias lu='ls -ltur'        # sort by and show access time, most recent last
+alias lx='ls -lXB'         # sort by extension
+alias machete="kill -9"
+alias mkdir='mkdir -p'
+alias mv='mv -i'
+alias off='xset dpms force off'
+alias pass="/bin/true"
+alias path='echo -e ${PATH//:/\\n}'
+alias po='popd'
+alias pu='pushd'
+alias which='type -a'
+# }}}
+
+# [Typos] ------------------------------------------------------------------ {{{
+alias celar=clear
+alias cl=clear
+alias clera=clear
+alias kk='ll'
+alias moer='more'
+alias moew='more'
+alias s=ls
+alias vf='cd'
+alias xs='cd'
+# }}}
+
+# [Utilities] -------------------------------------------------------------- {{{
+alias ungcc="gcc -z execstack -fno-stack-protector -fno-pie"
+alias ocvc="g++ \`pkg-config opencv --cflags --libs\`"
+alias to_c_string="hexdump -v -e '\"\\\\\\x\" 1/1 \"%02x\"'"
+
+<% if has_feature? :dropbox %>
+alias dst="python /home/jack/.dropbox-dist/dropbox.py status"
+alias dropbox="python /home/jack/.dropbox-dist/dropbox.py"
+<% end %>
+
+<% if has_feature? :antlr %>
+alias antlr4='java -jar /opt/antlr/antlr-4.4-complete.jar'
+alias grun='java org.antlr.v4.runtime.misc.TestRig'
+<% end %>
+
+<% if has_feature? :taskwarrior %>
+alias tw='task +<%= get_var! :"taskwarrior.context" %>'
+<% end %>
+
+<% if has_feature? :slackware %>
+alias halt='su -c halt'
+alias reboot='su -c reboot'
+alias shutdown='su -c shutdown'
+<% end %>
+
+<% if has_feature? :git %>
+# Git ---------------------------------------------------------------------- {{{
+alias gc='git commit -m'
+alias gl='git log --oneline --decorate --graph'
+alias gcheck='git checkout'
+alias ga='git add'
+alias gap='git add --patch'
+alias gpa='git_push_all'
+alias gp='git push'
+alias gpo='git push origin'
+alias gpom='git push origin master'
+alias gplo='git pull origin'
+alias gplom='git pull origin master'
+alias gfo='git pull fetch'
+alias gfom='git fetch origin master'
+alias grfh='git rebase FETCH_HEAD'
+alias gst='git status'
+alias gsa='git stash apply'
+alias gss='git stash save'
+alias gd='git diff'
+alias grm="git ls-files -deleted | xargs git rm"
+# }}}
+<% end %>
+
+<% if has_feature? :screen %>
+alias cudir='screen -X eval "chdir $PWD"'
+<% end %>
+
+<% if has_feature? :chips %>
+alias runonce="$STUFF/scripts/run_once.sh"
+alias irc="(sleep 10 && bash $STUFF/scripts/run_once.sh notify-listener.py $STUFF/scripts/notify-listener.py > /dev/null 2>&1) & irssi"
+alias mkd="$STUFF/scripts/mkd.sh"
+alias initlatex="mkdir tmp; mkdir bib; touch bib/bib.bib; cp $STUFF/templates/template.tex main.tex; touch main.tex.latexmain"
+alias initc="mkdir src; cp $STUFF/templates/Makefile.c ./Makefile"
+<% end %>
+
+# }}}
+
+# EOF vim: set ts=2 sw=2 tw=80 foldmethod=marker ft=sh :

@@ -1,0 +1,17 @@
+# => inherits: generic <= #
+
+features:
+  - base16_shell
+  - chips
+  - firefox
+  - git
+  - personal_stuff
+  - screen
+  - slackware
+  - taskwarrior:
+      context: 'home'
+  - w3mimgdisplay
+  - zathura
+  - zsh
+
+# vim: set filetype=yaml :

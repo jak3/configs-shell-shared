@@ -1,0 +1,8 @@
+features:
+  - alias
+  - dircolors
+  - env
+  - functions
+  - temp_env
+
+# vim: set filetype=yaml :
