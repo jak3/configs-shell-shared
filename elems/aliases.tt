@@ -2,7 +2,7 @@
 <% if has_feature? :zsh %>
 # Globals ------------------------------------------------------------------ {{{
 alias -g G="| grep"
-alias -g L="| less"
+alias -g L="| less -r"
 alias -g C="| xsel -bi"
 # }}}
 <% end %>
@@ -13,19 +13,6 @@ alias ...='cd ../../'
 alias ..='cd ..'
 alias cd='pushd'
 alias cdd='cd <%= get_var! :downloads_dir, type: :directory %>'
-alias cdb='cd ..'
-alias cdbb='cd ../../'
-alias cdbbb='cd ../../../'
-alias 1='cd -1'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
-alias 6='cd -6'
-alias 7='cd -7'
-alias 8='cd -8'
-alias 9='cd -9'
-alias 10='cd -10'
 <% end %>
 # }}}
 
@@ -36,22 +23,17 @@ alias ca='clear;history -c;dirs -c'
 alias c='clear'
 alias cd=cd_and_ls
 alias cp='cp -i'
-alias d='dir -v | head -10'
 alias e='exit'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias gdb='gdb -q'
 alias g='git'
 alias grep='grep --color=auto'
-alias h='history'
 alias info='info --vi-keys'
 alias j='jobs -l'
 alias las='ls -las'
 alias lc='ls -ltcr'        # sort by and show change time, most recent last
-alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
-alias lk='ls -lSr'         # sort by size, biggest last
 alias ll="ls -l --group-directories-first"
-alias lm='ls -al |more'    # pipe through 'more'
 alias lr='ls -lR'          # recursive ls
 alias lsd='ls -hFt <%= get_var! :downloads_dir, type: :directory %>'
 alias ls='ls -hF --color=auto'  # add colors for filetype recognition
