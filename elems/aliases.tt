@@ -1,6 +1,6 @@
 # [Shell specific] --------------------------------------------------------- {{{
 <% if has_feature? :zsh %>
-# Globals ------------------------------------------------------------------ {{{
+# [Globals] ---------------------------------------------------------------- {{{
 alias -g G="| grep"
 alias -g L="| less -r"
 alias -g C="| xsel -bi"
@@ -103,7 +103,6 @@ alias shutdown='su -c shutdown'
 <% end %>
 
 <% if has_feature? :git %>
-# Git ---------------------------------------------------------------------- {{{
 alias gc='git commit -m'
 alias gl='git log --oneline --decorate --graph'
 alias gcheck='git checkout'
@@ -123,7 +122,6 @@ alias gsa='git stash apply'
 alias gss='git stash save'
 alias gd='git diff'
 alias grm="git ls-files -deleted | xargs git rm"
-# }}}
 <% end %>
 
 <% if has_feature? :screen %>
