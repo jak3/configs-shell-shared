@@ -18,7 +18,6 @@ alias cdd='cd <%= get_var! :downloads_dir, type: :directory %>'
 
 # [Generic] ---------------------------------------------------------------- {{{
 alias bc='bc -q'
-alias bye='shutdown -h now'
 alias ca='clear;history -c;dirs -c'
 alias c='clear'
 alias cd=cd_and_ls
@@ -40,12 +39,13 @@ alias ls='ls -hF --color=auto'  # add colors for filetype recognition
 alias lt='ls -ltr'         # sort by date, most recent last
 alias lu='ls -ltur'        # sort by and show access time, most recent last
 alias lx='ls -lXB'         # sort by extension
-alias machete="kill -9"
+alias k9="kill -9"
 alias mkdir='mkdir -p'
 alias mv='mv -i'
 alias off='xset dpms force off'
 alias pass="/bin/true"
 alias path='echo -e ${PATH//:/\\n}'
+alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias po='popd'
 alias pu='pushd'
 alias which='type -a'
@@ -66,7 +66,7 @@ alias xs='cd'
 # [Utilities] -------------------------------------------------------------- {{{
 alias ungcc="gcc -z execstack -fno-stack-protector -fno-pie"
 alias ocvc="g++ \`pkg-config opencv --cflags --libs\`"
-alias to_c_string="hexdump -v -e '\"\\\\\\x\" 1/1 \"%02x\"'"
+#alias to_c_string="hexdump -v -e '\"\\\\\\x\" 1/1 \"%02x\"'"
 
 <% if has_feature? :dropbox %>
 alias dst="python /home/jack/.dropbox-dist/dropbox.py status"
@@ -78,11 +78,25 @@ alias antlr4='java -jar /opt/antlr/antlr-4.4-complete.jar'
 alias grun='java org.antlr.v4.runtime.misc.TestRig'
 <% end %>
 
+<% if has_feature? :tmsu %>
+alias tt='tmsu tag'
+alias tf='tmsu files'
+<% end %>
+
+<% if has_feature? :zathura %>
+alias z='zathura'
+<% end %>
+
 <% if has_feature? :taskwarrior %>
+alias t='task'
 alias tw='task +<%= get_var! :"taskwarrior.context" %>'
+alias ta='task add'
+alias td='task done'
+alias th='task -work'
 <% end %>
 
 <% if has_feature? :slackware %>
+alias sudo='su -c'
 alias halt='su -c halt'
 alias reboot='su -c reboot'
 alias shutdown='su -c shutdown'
