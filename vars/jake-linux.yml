@@ -19,6 +19,8 @@ features:
   - git
   - personal_stuff
   - screen
+  - taskwarrior
+  - tmsu
   - w3mimgdisplay
   - zathura
   - zsh
