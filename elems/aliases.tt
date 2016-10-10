@@ -80,6 +80,7 @@ alias grun='java org.antlr.v4.runtime.misc.TestRig'
 
 <% if has_feature? :tmsu %>
 alias tt='tmsu tag'
+alias tts='tmsu tags'
 alias tf='tmsu files'
 <% end %>
 
