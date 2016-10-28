@@ -155,6 +155,24 @@ function cd_and_ls() {
   fi
 }
 
+<% if has_feature? :analsh %>
+function my_setup {
+    source "<%= get_var! 'analsh.init_path', type: :directory %>"
+    ans=y | sp2_load_alias
+    cset customer_cur sp2
+}
+
+function my_workflow {
+    cset inc_cur ${1}
+    incaddsource ${2}
+    incaddtarget ${3}
+    cset inc_cur_category "External Attack"
+    cset inc_cur_notif_lvl "1TE"
+    cset inc_cur_classif_lvl "P-3"
+    cset inc_cur_status "Resolved"
+}
+<% end %>
+
 # }}}
 
 #EOF vim: set ts=2 sw=2 tw=80 foldmethod=marker :
