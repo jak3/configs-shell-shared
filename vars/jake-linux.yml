@@ -20,6 +20,7 @@ features:
   - personal_stuff
   - screen
   - tmsu
+  - tmux
   - w3mimgdisplay
   - zathura
   - zsh
