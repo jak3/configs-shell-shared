@@ -148,6 +148,10 @@ alias initlatex="mkdir tmp; mkdir bib; touch bib/bib.bib; cp $STUFF/templates/te
 alias initc="mkdir src; cp $STUFF/templates/Makefile.c ./Makefile"
 <% end %>
 
+<% if has_feature? :tmux %>
+alias tmux='tmux -2'
+<% end %>
+
 # }}}
 
 # EOF vim: set ts=2 sw=2 tw=80 foldmethod=marker ft=sh :
