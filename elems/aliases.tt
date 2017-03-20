@@ -102,7 +102,7 @@ alias th='task -work'
 <% if has_feature? :slackware %>
 alias sudo='su -c'
 alias halt='su -c halt'
-alias pm-suspend='su -c pm-suspend'
+alias pms='su -c pm-suspend'
 alias reboot='su -c reboot'
 alias shutdown='su -c shutdown'
 if [[ $USER == 'root' ]]; then
