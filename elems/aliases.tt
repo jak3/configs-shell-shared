@@ -4,6 +4,8 @@
 alias -g G="| grep"
 alias -g L="| less -r"
 alias -g C="| xsel -bi"
+alias -g T="| tail"
+alias -g H="| head"
 # }}}
 <% end %>
 
@@ -45,6 +47,7 @@ alias mv='mv -i'
 alias off='xset dpms force off'
 alias pass="/bin/true"
 alias path='echo -e ${PATH//:/\\n}'
+alias tarz='tar xvfz'
 alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias po='popd'
 alias pu='pushd'
@@ -99,8 +102,16 @@ alias th='task -work'
 <% if has_feature? :slackware %>
 alias sudo='su -c'
 alias halt='su -c halt'
+alias pm-suspend='su -c pm-suspend'
 alias reboot='su -c reboot'
 alias shutdown='su -c shutdown'
+if [[ $USER == 'root' ]]; then
+  alias sp='sqg -p'
+  alias si='sbopkg -i'
+  alias ss='sbopkg -s'
+  alias sg='sbopkg -g'
+  alias ssg='slackpkg search'
+fi
 <% end %>
 
 <% if has_feature? :git %>
